@@ -1,0 +1,26 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">Search</div>
+
+
+  <div class="panel-body">
+    <div class="row">
+
+      <div class="col-md-5">
+        <input type="text"
+               [(ngModel)]="searchText"
+               class="form-control"/>
+      </div>
+
+      <div class="col-md-5">
+        <input type="button" value="Search" (click)="submitSearch()" class="btn btn-primary" >
+        <input type="button" value="Clear" (click)="clearSearch()" class="btn btn-primary" >
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+</div>
+
