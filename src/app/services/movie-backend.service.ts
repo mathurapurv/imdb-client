@@ -12,18 +12,30 @@ export class MovieBackendService {
   constructor(private http: Http) {
   }
 
+   // http://localhost:8080/
+
+
   createNewMovieonBackend(movie: MovieModel): Observable<Response> {
     console.log(movie);
-    return this.http.post('http://localhost:8080/api/createMovie', movie);
+    return this.http.post('api/createMovie', movie);
   }
 
 
   listAllTheMovies(): Observable<Response> {
-    return this.http.get('http://localhost:8080/api/listMovies');
+    return this.http.get('api/listMovies');
   }
 
+  listRecommendedMovies(): Observable<Response> {
+    return this.http.get('api/listRecommendedMovies');
+  }
+
+
   searchMoviesByName(movieName: string): Observable<Response> {
-    return this.http.get('http://localhost:8080/api/movieByName/' + movieName);
+    return this.http.get('api/movieByName/' + movieName);
+  }
+
+  deleteMovieById(movieID: number): Observable<Response> {
+    return this.http.get('api/deleteMovieByID/' + movieID);
   }
 
 

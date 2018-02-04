@@ -1,44 +1,13 @@
 display {{movieList.length}} movie
 
 
-
-
-
-
-
 <div class="container-fluid">
-  <div class="row" *ngFor="let movie of movieList" >
-    <div class="col-md-4">
-      {{movie.name}}
-    </div>
-    <div class="col-md-4">
-      {{movie.releaseDate}}
-    </div>
 
-
-    <div class="col-sm-1">
-      <button type="button"
-              class="btn"
-              style=" color:#FF0000;">
-        <span class="glyphicon glyphicon-remove" (click)="deleteMovie(movie.id)" ></span></button>
-    </div>
-
-
-    <div class="col-sm-1">
-      <button type="button"
-              class="btn"
-              style=" color:#FF0000;">
-        <span class="glyphicon glyphicon-edit" (click)="editMovie(movie.id)"  ></span></button>
-    </div>
-
-
-
-
-
-
-
-
-  </div>
+  <app-detail-movie
+    *ngFor="let movie of movieList"
+    [movieItem]="movie"
+    (deleteMovieEvent)="deleteMovie($event)"
+  ></app-detail-movie>
 </div>
 
 

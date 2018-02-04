@@ -1,0 +1,26 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">People who liked this also liked... </div>
+
+
+  <div class="col-xs-7 panel" >
+    <div class="col-xs-2 panel" *ngFor="let movie of recommendedMovieList; " >
+      <img  [src]="'assets/images/'+ movie.id + '.jpg'"
+            (mouseover)="selectMovieForDisplay(movie)"
+            class="image-thumbnail">
+    </div>
+  </div>
+
+  <div class="col-xs-4 panel" >
+    <app-recommended-movie-details *ngIf="selectedMovie != null"
+      [selectedMovieForDisplay]="selectedMovie"
+    ></app-recommended-movie-details>
+  </div>
+
+
+
+
+
+</div>
+
+
+

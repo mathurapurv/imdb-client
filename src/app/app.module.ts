@@ -13,6 +13,9 @@ import {MovieBackendService} from './services/movie-backend.service';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import {DetailMovieComponent} from "./list-movie/display-movie/detail-movie.component";
+import { RecommendedMovieComponent } from './recommended-movie/recommended-movie.component';
+import { RecommendedMovieDetailsComponent } from './recommended-movie/recommended-movie-details/recommended-movie-details.component';
 
 
 @NgModule({
@@ -20,7 +23,10 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     AppComponent,
     CreateMovieComponent,
     ListMovieComponent,
-    SearchMovieComponent
+    SearchMovieComponent,
+    DetailMovieComponent,
+    RecommendedMovieComponent,
+    RecommendedMovieDetailsComponent
   ],
   imports: [
     BrowserModule , FormsModule , HttpModule , BsDropdownModule.forRoot(),

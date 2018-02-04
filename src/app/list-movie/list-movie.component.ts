@@ -56,12 +56,19 @@ export class ListMovieComponent implements OnInit {
   }
 
 
-  deleteMovie(movieID: number) {
-    console.log('Deleting movie' + movieID);
+  deleteMovie(event: {movieID: number}) {
+    console.log('Deleting movie' + event);
+
+    this.movieService.deleteMovieById(event.movieID).subscribe(
+      (response) => {
+        console.log(response);
+        this.refreshMovieList();
+      }
+    );
   }
 
   editMovie(movieID: number) {
-    console.log('Deleting movie' + movieID);
+    console.log('Editing movie' + movieID);
   }
 
 
